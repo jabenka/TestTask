@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "033a739f-9bc8-4096-b703-a12d84fcd472",
+		"name": "Dinner",
+		"description": "Collection for testing and playing around with this service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36844194"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Иван Иванов\",\n  \"email\": \"ivan3@example.com\",\n  \"age\": 30,\n  \"weight\": 75.5,\n  \"height\": 1.85,\n  \"aim\": \"0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9120/v1/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9120",
+					"path": [
+						"v1",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateDish",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Гречневая каша\",\n  \"numberOfCalories\": 132.5,\n  \"proteins\": 4.2,\n  \"fats\": 1.1,\n  \"carbohydrates\": 25.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9120/v1/dish/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9120",
+					"path": [
+						"v1",
+						"dish",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateMeal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 1,\n  \"dishes\": [\n    {\n      \"dishId\": 1\n    },\n    {\n      \"dishId\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9120/v1/meals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9120",
+					"path": [
+						"v1",
+						"meals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsersMeals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9120/v1/meals/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9120",
+					"path": [
+						"v1",
+						"meals",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DailyReport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9120/v1/reports/daily-report/1/2025-03-24",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9120",
+					"path": [
+						"v1",
+						"reports",
+						"daily-report",
+						"1",
+						"2025-03-24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9120/v1/reports/calorie-check/1/2025-03-26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9120",
+					"path": [
+						"v1",
+						"reports",
+						"calorie-check",
+						"1",
+						"2025-03-26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9120/v1/reports/nutrition-history/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9120",
+					"path": [
+						"v1",
+						"reports",
+						"nutrition-history",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HistoryForPeriod",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9120/v1/reports/nutrition-history/1?startDate=2025-03-01&endDate=2025-03-31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9120",
+					"path": [
+						"v1",
+						"reports",
+						"nutrition-history",
+						"1"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2025-03-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-03-31"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
